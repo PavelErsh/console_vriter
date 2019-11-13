@@ -1,28 +1,34 @@
-﻿#include <string.h>
+﻿#include <string>
 #include <iostream>
 #include <fstream>
 
 using namespace std;
 
-const int SIZE = 200;
-const int LSIZE = 100000;
+const short int SIZE = 100;
+const int LSIZE = 10000;
 
-void CreateFile(char file_name[], int SIZE ) {
+const string CSDesktop = "C:\\Users\\pavel\\Desktop\\";
+
+void CreateFile_Desktop(string file_name)
+{
+
 	ifstream open_file;
+	
+	string Sdirectori = CSDesktop + file_name;
 
-	string directori = "C:\\Users\\pavel\\Desktop\\";
-	directori += file_name;
-
-	const char* CCdirectori = directori.c_str();
+	const char* CCdirectori = Sdirectori.c_str();
 
 	open_file.open(CCdirectori, ios::app);//open correct directori from file
+
 }
 
+void WriteFrom_Directori(string file_name, string input_file) 
+{
+	string Sdirectori = CSDesktop + file_name;
 
-void WriteFile(char input_file[], int LSIZE, char file_name[], int SIZE ) {
-	cin.getline(input_file, LSIZE);
+	const char* CCdirectori = Sdirectori.c_str();
 
-	ofstream file(file_name);
+	ofstream file(CCdirectori);
 
 	if (!file.is_open())
 		cout << "not open file!\n";
@@ -32,24 +38,21 @@ void WriteFile(char input_file[], int LSIZE, char file_name[], int SIZE ) {
 		file << input_file; // write from file
 		cout << input_file << endl; // print 
 	}
-
-	file.close();
 }
 
-int main ()
+int main()
 {
 
 	cout << "Enter file name: ";
-	char file_name[SIZE];
-	cin.getline(file_name, SIZE);
+	string file_name;
+	cin >> file_name;
+	CreateFile_Desktop(file_name);
 
-	CreateFile(file_name, SIZE);
-	
 	cout << "Enter text from file: ";
-	char input_file[LSIZE];
+	string input_file;
+	cin >> input_file;
 
-	WriteFile(input_file, LSIZE, file_name, SIZE);
-
-	return 0;
+	WriteFrom_Directori(file_name, input_file);
 }
+
 
