@@ -36,7 +36,7 @@ void WriteFrom_Directori(string file_name, string input_file)
 	else
 	{
 		file << input_file; // write from file
-		cout << input_file << endl; // print 
+		cout << input_file << endl; 
 	}
 }
 
@@ -44,15 +44,20 @@ int main()
 {
 
 	cout << "Enter file name: ";
+
 	string file_name;
 	cin >> file_name;
+
 	CreateFile_Desktop(file_name);
 
 	cout << "Enter text from file: ";
+
 	string input_file;
 	cin >> input_file;
 
 	WriteFrom_Directori(file_name, input_file);
+
+	return 0;
 }
 
 
