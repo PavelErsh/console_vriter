@@ -9,7 +9,7 @@ const int LSIZE = 10000;
 
 const string CSDesktop = "C:\\Users\\pavel\\Desktop\\";
 
-void CreateFile_Desktop(string file_name)
+void CreateFile_Desktop(char file_name[], int SIZE)
 {
 
 	ifstream open_file;
@@ -22,7 +22,7 @@ void CreateFile_Desktop(string file_name)
 
 }
 
-void WriteFrom_Directori(string file_name, string input_file) 
+void WriteFrom_Directori(char file_name[], int SIZE, char input_file[], int LSIZE) 
 {
 	string Sdirectori = CSDesktop + file_name;
 
@@ -45,17 +45,17 @@ int main()
 
 	cout << "Enter file name: ";
 
-	string file_name;
-	cin >> file_name;
+	char file_name[SIZE];
+	cin.getline(file_name, SIZE);
 
-	CreateFile_Desktop(file_name);
+	CreateFile_Desktop(file_name, SIZE);
 
 	cout << "Enter text from file: ";
 
-	string input_file;
-	cin >> input_file;
+	char input_file[LSIZE];
+	cin.getline(input_file, LSIZE);
 
-	WriteFrom_Directori(file_name, input_file);
+	WriteFrom_Directori(file_name, SIZE, input_file, LSIZE);
 
 	return 0;
 }
