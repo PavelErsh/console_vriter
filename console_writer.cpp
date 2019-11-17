@@ -40,6 +40,25 @@ void WriteFrom_Directori(char file_name[], int SIZE, char input_file[], int LSIZ
 	}
 }
 
+void WriteFrom_CastomDirectori(char directori[], int LSIZE, char file_name[], int SIZE, char input_file[1000]) 
+{
+	string SCastomdirectori = directori;
+	string Sdirectori = SCastomdirectori + file_name;
+
+	const char* CCdirectori = Sdirectori.c_str();
+
+	ofstream file(CCdirectori);
+
+	if (!file.is_open())
+		cout << "not open file!\n";
+
+	else
+	{
+		file << input_file; // write from file
+		cout << input_file << endl;
+	}
+}
+
 int main()
 {
 
