@@ -42,8 +42,8 @@ void WriteFrom_Directori(char file_name[], int SIZE, char input_file[], int LSIZ
 
 void WriteFrom_CastomDirectori(char directori[], int LSIZE, char file_name[], int SIZE, char input_file[1000]) 
 {
-	string SCastomdirectori = directori;
-	string Sdirectori = SCastomdirectori + file_name;
+	string SCastom_directori = directori;
+	string Sdirectori = SCastom_directori + file_name;
 
 	const char* CCdirectori = Sdirectori.c_str();
 
