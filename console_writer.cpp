@@ -5,7 +5,7 @@
 using namespace std;
 
 const short int SIZE = 100;
-const int LSIZE = 10000;
+const int LSIZE = 100000;
 
 const string CSDesktop = "C:\\Users\\pavel\\Desktop\\";
 
@@ -36,7 +36,7 @@ void WriteFrom_Directori(char file_name[], int SIZE, char input_file[], int LSIZ
 	else
 	{
 		file << input_file; // write from file
-		cout << input_file << endl; 
+		cout << input_file << endl; //output information
 	}
 }
 
